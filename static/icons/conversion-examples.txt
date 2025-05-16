@@ -1,0 +1,145 @@
+字体图标到图片资源转换示例
+
+# 1. upload.vue 页面转换示例
+
+原代码:
+```vue
+<view class="upload-icon-wrapper">
+  <text class="upload-icon icon">&#xe7da;</text>
+</view>
+
+<view class="feature-icon">
+  <text class="icon">&#xe652;</text>
+</view>
+```
+
+转换后:
+```vue
+<view class="upload-icon-wrapper">
+  <image src="/static/icons/upload.png" class="icon-large" mode="aspectFit"></image>
+</view>
+
+<view class="feature-icon">
+  <image src="/static/icons/model.png" class="icon-medium" mode="aspectFit"></image>
+</view>
+```
+
+使用IconImage组件:
+```vue
+<view class="upload-icon-wrapper">
+  <icon-image type="upload" :size="48"></icon-image>
+</view>
+
+<view class="feature-icon">
+  <icon-image type="model" :size="24"></icon-image>
+</view>
+```
+
+# 2. writing.vue 页面转换示例
+
+原代码:
+```vue
+<view class="tool-btn" @click="addSection">
+  <text class="tool-icon">+</text>
+  <text class="tool-text">添加章节</text>
+</view>
+
+<view class="tool-btn" @click="insertReference">
+  <text class="tool-icon tool-icon-ref">&#xe65c;</text>
+  <text class="tool-text">插入引用</text>
+</view>
+
+<view class="tool-btn" @click="optimizeSection">
+  <text class="tool-icon tool-icon-opt">&#xe644;</text>
+  <text class="tool-text">优化段落</text>
+</view>
+
+<button class="send-btn" @click="askAssistant">
+  <text class="send-icon">&#xe65c;</text>
+</button>
+```
+
+转换后:
+```vue
+<view class="tool-btn" @click="addSection">
+  <image src="/static/icons/plus.png" class="icon-medium" mode="aspectFit"></image>
+  <text class="tool-text">添加章节</text>
+</view>
+
+<view class="tool-btn" @click="insertReference">
+  <image src="/static/icons/optimize.png" class="icon-medium" mode="aspectFit"></image>
+  <text class="tool-text">插入引用</text>
+</view>
+
+<view class="tool-btn" @click="optimizeSection">
+  <image src="/static/icons/edit.png" class="icon-medium" mode="aspectFit"></image>
+  <text class="tool-text">优化段落</text>
+</view>
+
+<button class="send-btn" @click="askAssistant">
+  <image src="/static/icons/paperplane.png" class="icon-medium" mode="aspectFit"></image>
+</button>
+```
+
+# 3. analysis.vue 页面转换示例
+
+原代码:
+```vue
+<view class="file-icon">
+  <text class="icon">&#xe663;</text>
+</view>
+```
+
+转换后:
+```vue
+<view class="file-icon">
+  <image src="/static/icons/analysis.png" class="icon-medium" mode="aspectFit"></image>
+</view>
+```
+
+使用IconImage组件:
+```vue
+<view class="file-icon">
+  <icon-image type="analysis" :size="24"></icon-image>
+</view>
+```
+
+# 转换注意事项:
+
+1. 在模板中添加图片资源:
+   - 将text元素替换为image元素
+   - 使用适当的尺寸类（icon-small, icon-medium, icon-large）
+
+2. 修改样式:
+   - 移除与字体图标相关的样式（如font-family等）
+   - 保留与定位和布局相关的样式
+
+3. 修改脚本部分:
+   - 导入IconImage组件
+   - 在components中注册IconImage组件
+
+完整script示例:
+```vue
+<script setup>
+import { ref, onMounted } from 'vue';
+import PageHeader from '@/components/PageHeader.vue';
+import IconImage from '@/components/IconImage.vue';
+// 其他代码保持不变...
+</script>
+```
+
+或者使用选项式API:
+```vue
+<script>
+import PageHeader from '@/components/PageHeader.vue';
+import IconImage from '@/components/IconImage.vue';
+
+export default {
+  components: {
+    PageHeader,
+    IconImage
+  },
+  // 其他代码保持不变...
+}
+</script>
+``` 
