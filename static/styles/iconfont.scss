@@ -1,0 +1,76 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('/static/fonts/iconfont.ttf') format('truetype');
+}
+
+.icon {
+  font-family: 'iconfont' !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-back:before {
+  content: "\e697";
+}
+
+.icon-upload:before {
+  content: "\e7da";
+}
+
+.icon-translate:before {
+  content: "\e680";
+}
+
+.icon-edit:before {
+  content: "\e644";
+}
+
+.icon-setting:before {
+  content: "\e78e";
+}
+
+.icon-history:before {
+  content: "\e64c";
+}
+
+.icon-copy:before {
+  content: "\e6da";
+}
+
+.icon-user:before {
+  content: "\e7ae";
+}
+
+.icon-download:before {
+  content: "\e66c";
+}
+
+.icon-plus:before {
+  content: "\e710";
+}
+
+.icon-quote:before {
+  content: "\e72f";
+}
+
+.icon-optimize:before {
+  content: "\e65c";
+}
+
+.icon-analysis:before {
+  content: "\e663";
+}
+
+.icon-model:before {
+  content: "\e652";
+}
+
+.icon-lock:before {
+  content: "\e710";
+}
+
+.icon-password:before {
+  content: "\e75c";
+} 
